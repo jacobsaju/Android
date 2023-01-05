@@ -1,0 +1,1746 @@
+1.Design a Login Page
+PROGRAM
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent" android:orientation="vertical">
+<EditText
+android:id="@+id/editText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:ems="10"
+android:inputType="textPersonName"
+android:text="USERNAME"
+android:textColor="@color/colorAccent"
+tools:layout_editor_absoluteX="85dp"
+tools:layout_editor_absoluteY="54dp" />
+<EditText
+android:id="@+id/editText2"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+2
+Dept.of Computer Science And Applications, SJCET, Palai
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:ems="10"
+android:inputType="textPersonName"
+android:text="PASSWORD"
+android:textColor="@color/colorAccent"
+tools:layout_editor_absoluteX="85dp"
+tools:layout_editor_absoluteY="175dp" />
+<Button
+android:id="@+id/button"
+android:layout_width="120dp"
+android:layout_height="wrap_content"
+android:background="@color/colorPrimary"
+android:text="LOGIN"
+android:textSize="30sp"
+tools:layout_editor_absoluteX="148dp"
+tools:layout_editor_absoluteY="303dp" />
+</LinearLayout>
+</android.support.constraint.ConstraintLayout>
+Main_Activity.java
+package com.example.sjcet.c3;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class MainActivity extends AppCompatActivity {
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+3
+Dept.of Computer Science And Applications, SJCET, Palai
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+}
+ OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+4
+Dept.of Computer Science And Applications, SJCET, Palai
+2.Change content in the text view on a button click
+PROGRAM
+Activity_main.xml
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center" 
+xmlns:android="http://schemas.android.c
+om/apk/res/android">
+<TextView
+android:id="@+id/tv"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="ANU"/>
+<Button
+android:id="@+id/btn1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Change"
+android:onClick="change"/>
+</LinearLayout>
+Main_Activity.java
+ 
+ package com.example.sjcet.buttonclick2;
+ import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+TextView tv;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+5
+Dept.of Computer Science And Applications, SJCET, Palai
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+tv = findViewById(R.id.tv);
+}
+public void change(View view) {
+tv.setText("Essa");
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+6
+Dept.of Computer Science And Applications, SJCET, Palai
+3.Read a value from edit text and print it in a text view
+PROGRAM
+Activity main.xml
+<LinearLayout
+android:layout_height="match_parent"
+android:layout_width="match_parent"
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<EditText
+android:id="@+id/text1"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Enter Text"/>
+<Button
+android:id="@+id/btn"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Change"
+android:onClick="Click"
+/>
+<TextView
+android:id="@+id/text2"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+/>
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+7
+Dept.of Computer Science And Applications, SJCET, Palai
+</LinearLayout>
+Main_Activity.java
+package com.example.sjcet.c3;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+EditText text1;
+TextView text2;
+Button btn;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+text1=(EditText)findViewById(R.id.text1);
+btn=(Button)findViewById(R.id.btn);
+text2=(TextView)findViewById(R.id.text2);
+}
+public void Click(View view) {
+String content= text1.getText().toString();
+text2.setText(content);
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+8
+Dept.of Computer Science And Applications, SJCET, Palai
+}
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+9
+Dept.of Computer Science And Applications, SJCET, Palai
+4. change the baground color on a button click
+PROGRAM
+Activity_main.xml
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_gravity="center">
+<Button
+android:id="@+id/bt"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_gravity="center"
+android:onClick="click"
+android:text="CHANGE" />
+</LinearLayout>
+Main_Activity.java
+package com.example.sjcet.background;
+import android.widget.Button;
+import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class MainActivity extends AppCompatActivity {
+View v;
+Button bt;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+v= this.getWindow().getDecorView();
+bt=(Button) findViewById(R.id.bt);
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+10
+Dept.of Computer Science And Applications, SJCET, Palai
+public void click(View view) {
+v.setBackgroundResource(android.R.color.holo_orange_light);
+}
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+11
+Dept.of Computer Science And Applications, SJCET, Palai
+5. Create a simple calculator
+PROGRAM
+Activity_Main.java
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+ <EditText
+android:id="@+id/ed1"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="16dp"
+android:ems="10"
+android:inputType="textPersonName"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/ed2"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:ems="10"
+android:inputType="textPersonName"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed1" />
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+12
+Dept.of Computer Science And Applications, SJCET, Palai
+<Button
+android:id="@+id/btn1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="132dp"
+android:onClick="add"
+android:text="+"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed2" />
+<Button
+android:id="@+id/btn2"
+android:layout_width="wrap_content"
+ android:layout_height="0dp" 
+android:onClick="sub"
+android:text="-"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btn1" />
+<Button
+android:id="@+id/btn3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="60dp"
+android:onClick="mul"
+android:text="*"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btn1" />
+<Button
+android:id="@+id/btn4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+13
+Dept.of Computer Science And Applications, SJCET, Palai
+android:layout_marginTop="12dp"
+android:onClick="div"
+android:text="/"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.067"
+app:layout_constraintStart_toEndOf="@+id/btn3"
+app:layout_constraintTop_toBottomOf="@+id/btn2" />
+<TextView
+android:id="@+id/txt1"
+android:layout_width="384dp"
+android:layout_height="21dp"
+android:layout_marginTop="80dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed1" />
+</android.support.constraint.ConstraintLayout>
+Main_Activity.java
+package com.example.sjcet.simplecalculator;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+TextView tv1;
+EditText et1,et2;
+int ed1,ed2;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+14
+Dept.of Computer Science And Applications, SJCET, Palai
+public void add(View view) {
+et1 = (EditText)findViewById(R.id.ed1);
+et2 = (EditText)findViewById(R.id.ed2);
+tv1 = (TextView)findViewById(R.id.txt1);
+String s1 = et1.getText().toString();
+String s2 = et2.getText().toString();
+ed1 = Integer.parseInt(s1);
+ed2 = Integer.parseInt(s2);
+int sum = ed1 + ed2;
+tv1.setText(Integer.toString(sum));
+}
+public void sub(View view) {
+et1 = (EditText)findViewById(R.id.ed1);
+et2 = (EditText)findViewById(R.id.ed2);
+tv1 = (TextView)findViewById(R.id.txt1);
+String s1 = et1.getText().toString();
+String s2 = et2.getText().toString();
+ed1 = Integer.parseInt(s1);
+ed2 = Integer.parseInt(s2);
+int sum = ed1 - ed2;
+tv1.setText(Integer.toString(sum));
+}
+public void mul(View view) {
+et1 = (EditText)findViewById(R.id.ed1);
+et2 = (EditText)findViewById(R.id.ed2);
+tv1 = (TextView)findViewById(R.id.txt1);
+String s1 = et1.getText().toString();
+String s2 = et2.getText().toString();
+ed1 = Integer.parseInt(s1);
+ed2 = Integer.parseInt(s2);
+int sum = ed1 * ed2;
+tv1.setText(Integer.toString(sum));
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+15
+Dept.of Computer Science And Applications, SJCET, Palai
+ public void div(View view) {
+et1 = (EditText)findViewById(R.id.ed1);
+et2 = (EditText)findViewById(R.id.ed2);
+tv1 = (TextView)findViewById(R.id.txt1);
+String s1 = et1.getText().toString();
+String s2 = et2.getText().toString();
+ed1 = Integer.parseInt(s1);
+ed2 = Integer.parseInt(s2);
+int sum = ed1 / ed2;
+tv1.setText(Integer.toString(sum));
+}
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+16
+Dept.of Computer Science And Applications, SJCET, Palai
+6.create two activity from the button click move to the second activity using
+intent
+PROGRAM
+Activity_Main.xml
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="MOVE TO NEXT ACTIVITY"
+android:id="@+id/bt"
+android:onClick="click"
+android:gravity="center"/>
+</LinearLayout>
+Activity_main2.xml
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+android:background="@android:color/holo_blue_light"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="WELCOME TO THE SECOND ACTIVITY"
+android:id="@+id/tv" />
+</LinearLayout>
+Main_Activity.java
+package com.example.sjcet.cycle2_1;
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+17
+Dept.of Computer Science And Applications, SJCET, Palai
+import android.content.Intent;
+import android.widget.Button;
+import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class MainActivity extends AppCompatActivity {
+Button bt;
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+bt =findViewById(R.id.bt);
+}
+public void click(View view) {
+OpenNewActivity();
+}
+public void OpenNewActivity()
+{
+Intent intent=new Intent(this, Main2Activity.class);
+startActivity(intent);
+}
+}
+Main_Activity2.java
+package com.example.sjcet.cycle2_1;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class Main2Activity extends AppCompatActivity {
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main2);
+}
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+18
+Dept.of Computer Science And Applications, SJCET, Palai
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+19
+Dept.of Computer Science And Applications, SJCET, Palai
+7.Create an activity and move to facebook login page on button click
+PROGRAM
+Activity_Main.xml
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="MOVE TO FB PAGE"
+android:id="@+id/bt"
+android:onClick="click"
+android:gravity="center"/>
+</LinearLayout>
+Main_Activity.java
+package com.example.sjcet.myapplication;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+public class MainActivity extends AppCompatActivity {
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+20
+Dept.of Computer Science And Applications, SJCET, Palai
+ Button btn_Explicit = (Button)findViewById(R.id.bt); 
+btn_Explicit.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/"));
+startActivity(intent);
+}
+});
+}
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+21
+Dept.of Computer Science And Applications, SJCET, Palai
+8.Read message in the first activity and pass it to the 2nd activity on a
+button click
+PROGRAM
+Activity_Main.xml
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/et"
+android:textColor="@android:color/holo_red_dark"/>
+<Button
+android:layout_width="wrap_content"
+ android:layout_height="wrap_content" 
+android:text="MOVE TO NEXT ACTIVITY"
+android:id="@+id/bt"
+android:onClick="click"
+/>
+</LinearLayout>
+Activity_main2.xml
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+xmlns:android="http://schemas.android.com/apk/res/android">
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+22
+Dept.of Computer Science And Applications, SJCET, Palai
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv"
+/
+</LinearLayout>
+Main_Activity.java
+package com.example.sjcet.myapplication;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+public class MainActivity extends AppCompatActivity {
+Button bt;
+EditText et;
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+bt =findViewById(R.id.bt);
+et =findViewById(R.id.et);
+}
+public void onClick(View v) {
+String str = et.getText().toString();
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+23
+Dept.of Computer Science And Applications, SJCET, Palai
+Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+intent.putExtra("message_key", str);
+startActivity(intent);
+}
+}
+Main_Activity2.java
+package com.example.sjcet.myapplication;
+import android.widget.TextView;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class Main2Activity extends AppCompatActivity {
+TextView tv;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main2);
+tv =findViewById(R.id.tv);
+Intent intent = getIntent();
+String str = intent.getStringExtra("message_key");
+tv.setText(str);
+}
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+24
+Dept.of Computer Science And Applications, SJCET, Palai
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+25
+Dept.of Computer Science And Applications, SJCET, Palai
+9.Create a registration page with full validation and pass the information
+tothe second activty(using shared preference)
+Mandatory fields : fname,lname,gender,email,phone 
+number,password,dob(date picker)
+PROGRAM
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+<EditText
+android:id="@+id/editTextName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter First Name"
+android:inputType="textPersonName" />
+<EditText
+android:id="@+id/editTextlName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter Last Name"
+android:inputType="textPersonName" />
+<EditText
+android:id="@+id/editTextgender"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter Gender"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+26
+Dept.of Computer Science And Applications, SJCET, Palai
+android:inputType="textPersonName" />
+<EditText
+android:id="@+id/editTextEmail"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter Email"
+android:inputType="textPersonName" />
+<EditText
+android:id="@+id/editTextMobile"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter Mobile Number"
+android:inputType="textEmailAddress" />
+<EditText
+android:id="@+id/editTextDob"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter Date of Birth (DD/MM/YYYY)"
+android:inputType="date" />
+<EditText
+android:id="@+id/editTextpassword"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:ems="10"
+android:hint="Enter Password"
+android:inputType="textPassword" />
+<Button
+android:id="@+id/buttonSubmit"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Submit" />
+</LinearLayout>
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+27
+Dept.of Computer Science And Applications, SJCET, Palai
+Activity_Main2.xml
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv"
+/>
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv1"
+/>
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv2"
+/>
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv3"
+/>
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv4"
+/>
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv5"
+/>
+<TextView
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+28
+Dept.of Computer Science And Applications, SJCET, Palai
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/tv6"
+/>
+</LinearLayout>
+Main_Activity.java
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Button;
+import android.widget.Toast;
+import android.content.SharedPreferences;
+public class MainActivity extends AppCompatActivity {
+EditText editTextName, editTextlName,editTextEmail, editTextMobile,
+editTextDob, editTextgender,editTextpassword;
+Button buttonSubmit;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+buttonSubmit =findViewById(R.id.buttonSubmit);
+editTextName =findViewById(R.id.editTextName);
+editTextlName =findViewById(R.id.editTextlName);
+editTextEmail =findViewById(R.id.editTextEmail);
+editTextMobile =findViewById(R.id.editTextMobile);
+editTextDob =findViewById(R.id.editTextDob);
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+29
+Dept.of Computer Science And Applications, SJCET, Palai
+editTextgender =findViewById(R.id.editTextgender);
+editTextpassword =findViewById(R.id.editTextpassword);
+buttonSubmit.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View view) {
+checkDataEntered();
+SharedPreferences mypref=getSharedPreferences("activity_main2.xml",0);
+SharedPreferences.Editor editor=mypref.edit();//only write editor
+editor.putString("fname",editTextName.getText().toString()); //bundle the data
+editor.putString("lname",editTextlName.getText().toString());
+editor.putString("gender",editTextgender.getText().toString());
+editor.putString("phone",editTextMobile.getText().toString());
+editor.putString("pwd",editTextpassword.getText().toString());
+editor.putString("email",editTextEmail.getText().toString());
+editor.putString("dob",editTextDob.getText().toString());
+editor.commit();
+// String str = editTextName.getText().toString();
+//String str1 = editTextName.getText().toString();
+Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+intent.putExtra("fname",editTextName.getText().toString());
+intent.putExtra("lname",editTextlName.getText().toString());
+intent.putExtra("gender",editTextgender.getText().toString());
+intent.putExtra("phone",editTextMobile.getText().toString());
+intent.putExtra("pwd",editTextpassword.getText().toString());
+intent.putExtra("email",editTextEmail.getText().toString());
+intent.putExtra("dob",editTextDob.getText().toString());
+startActivity(intent);
+}
+});
+}
+boolean isEmail(EditText text) {
+CharSequence email = text.getText().toString();
+return (!TextUtils.isEmpty(email) &&
+Patterns.EMAIL_ADDRESS.matcher(email).matches());
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+30
+Dept.of Computer Science And Applications, SJCET, Palai
+}
+boolean isEmpty(EditText text) {
+CharSequence str = text.getText().toString();
+return TextUtils.isEmpty(str);
+}
+void checkDataEntered() {
+if (isEmpty(editTextName)) {
+Toast t = Toast.makeText(this, "You must enter first name to register!",
+Toast.LENGTH_SHORT);
+t.show();
+}
+if (isEmpty(editTextlName)) {
+editTextlName.setError("Last name is required!");
+}
+if (isEmpty(editTextMobile)) {
+editTextMobile.setError("mobile number is required!");
+}
+if (isEmpty(editTextgender)) {
+editTextgender.setError("Gender is required!");
+}
+if (isEmpty(editTextpassword)) {
+editTextpassword.setError("Password is required!");
+}
+if (isEmpty(editTextDob)) {
+editTextDob.setError("DOB is required!");
+}
+if (isEmail(editTextEmail) == false) {
+editTextEmail.setError("Enter valid email!");
+}
+}
+}
+Main_Activity2.java
+import android.content.SharedPreferences;
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+31
+Dept.of Computer Science And Applications, SJCET, Palai
+import android.widget.TextView;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class Main2Activity extends AppCompatActivity {
+TextView tv,tv1,tv2,tv3,tv4,tv5,tv6;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main2);
+tv =findViewById(R.id.tv);
+tv1 =findViewById(R.id.tv1);
+tv2 =findViewById(R.id.tv2);
+tv3 =findViewById(R.id.tv3);
+tv4 =findViewById(R.id.tv4);
+tv5 =findViewById(R.id.tv5);
+tv6 =findViewById(R.id.tv6);
+Intent intent = getIntent();
+SharedPreferences mypref=getSharedPreferences("activity_main2.xml",0);
+String str = mypref.getString("fname",null);
+String str1 = mypref.getString("lname",null);
+String str2 = mypref.getString("gender",null);
+String str3 = mypref.getString("phone",null);
+String str4 = mypref.getString("pwd",null);
+String str5 = mypref.getString("email",null);
+String str6 = mypref.getString("dob",null);
+tv.setText(str);
+tv1.setText(str1);
+tv2.setText(str2);
+tv3.setText(str3);
+tv4.setText(str4);
+tv5.setText(str5);
+tv6.setText(str6);
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+32
+Dept.of Computer Science And Applications, SJCET, Palai
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+33
+Dept.of Computer Science And Applications, SJCET, Palai
+10.login and registration
+PROGRAM
+Activity_home.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".home">
+<TextView
+android:id="@+id/textView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="HOME"
+tools:layout_editor_absoluteX="163dp"
+tools:layout_editor_absoluteY="40dp" />
+</android.support.constraint.ConstraintLayout>
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+34
+Dept.of Computer Science And Applications, SJCET, Palai
+android:id="@+id/btn1"
+android:layout_width="100dp"
+android:layout_height="51dp"
+android:layout_marginTop="24dp"
+android:onClick="register"
+android:text="Register"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/btn2" />
+<Button
+android:id="@+id/btn2"
+android:layout_width="79dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:layout_marginBottom="24dp"
+android:onClick="login"
+android:text="Login"
+app:layout_constraintBottom_toTopOf="@+id/btn1"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/edpass" />
+<EditText
+android:id="@+id/eduname"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:ems="10"
+android:hint="username"
+android:inputType="textPersonName"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+35
+Dept.of Computer Science And Applications, SJCET, Palai
+<EditText
+android:id="@+id/edpass"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:ems="10"
+android:hint="password"
+android:inputType="textPersonName"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/eduname" />
+</android.support.constraint.ConstraintLayout>
+activity_register.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".register">
+<EditText
+android:id="@+id/edtxt1"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:layout_marginBottom="24dp"
+android:ems="10"
+android:hint="Name"
+android:inputType="textPersonName"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+36
+Dept.of Computer Science And Applications, SJCET, Palai
+app:layout_constraintBottom_toTopOf="@+id/edtxt2"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/edtxt2"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:layout_marginBottom="24dp"
+android:ems="10"
+android:hint="Address"
+android:inputType="textPersonName"
+app:layout_constraintBottom_toTopOf="@+id/edtxt3"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/edtxt1" />
+<EditText
+android:id="@+id/edtxt3"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginBottom="24dp"
+android:ems="10"
+android:hint="email"
+android:inputType="textPersonName"
+app:layout_constraintBottom_toTopOf="@+id/edtxt4"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent" />
+<EditText
+android:id="@+id/edtxt4"
+android:layout_width="0dp"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+37
+Dept.of Computer Science And Applications, SJCET, Palai
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:ems="10"
+android:hint="phone no"
+android:inputType="textPersonName"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/edtxt3" />
+</android.support.constraint.ConstraintLayout>
+home.java
+package com.example.sjcet.constlayout;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+public class home extends AppCompatActivity {
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_home);
+}
+}
+Main_Activity.java
+package com.example.sjcet.constlayout;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+38
+Dept.of Computer Science And Applications, SJCET, Palai
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+public void register(View view) {
+Intent i = new Intent(MainActivity.this, register.class);
+startActivity(i);
+}
+public void login(View view) {
+EditText E1, E2;
+E1 =(EditText) findViewById(R.id.eduname);
+E2 = (EditText) findViewById(R.id.edpass);
+if ((E1.getText().toString().equals("admin")) && (E2.getText().toString().equals("admin")))
+{
+Intent i = new Intent(MainActivity.this,home.class);
+startActivity(i);
+}
+else
+{
+Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+}
+}
+}
+Register.java
+package com.example.sjcet.loginvali;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+39
+Dept.of Computer Science And Applications, SJCET, Palai
+import android.widget.EditText;
+import android.widget.Toast;
+public class register extends AppCompatActivity {
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_register);
+}
+public void rgstr(View view) {
+EditText E1,E2,E3,E4,E5;
+E1 = (EditText) findViewById(R.id.edtxt1);
+E2 = (EditText) findViewById(R.id.edtxt2);
+E3 = (EditText) findViewById(R.id.edtxt3);
+E4 = (EditText) findViewById(R.id.edtxt4);
+E5 = (EditText) findViewById(R.id.edtxt5);
+String MobilePattern = "[0-9]{10}";
+if(E1.length() == 0) {
+Toast.makeText(this, "Enter name", Toast.LENGTH_SHORT).show();
+}
+else if(E2.length() == 0) {
+Toast.makeText(this, "Enter Address", Toast.LENGTH_SHORT).show();
+}
+else if(E3.length() == 0) {
+Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show();
+}
+else if(E4.length() == 0) {
+Toast.makeText(this, "Enter phone no", Toast.LENGTH_SHORT).show();
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+40
+Dept.of Computer Science And Applications, SJCET, Palai
+}
+else if((E4.length() != 10) && (!E5.getText().toString().matches(MobilePattern)) ) {
+Toast.makeText(this, "enter valid phone number", Toast.LENGTH_SHORT).show();
+}
+else if(E5.length() == 0) {
+Toast.makeText(this, "Enter valid password", Toast.LENGTH_SHORT).show();
+}
+else if(E5.length() < 8) {
+Toast.makeText(this, "Password should be minimum 8 characters",
+Toast.LENGTH_SHORT).show();
+}
+else{
+Toast.makeText(this, "resgistered successfully", Toast.LENGTH_SHORT).show();
+}
+}
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+41
+Dept.of Computer Science And Applications, SJCET, Palai
+11.List view
+PROGRAM
+Main_activity.java
+package com.example.sjcet.listview;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+public class MainActivity extends AppCompatActivity {
+ListView lv;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+lv=(ListView)findViewById(R.id.lv);
+String[] courses={"MCA","MBA","BBA","BCA"};
+ArrayAdapter adapter = new
+ArrayAdapter(this,android.R.layout.simple_list_item_1,courses);
+lv.setAdapter(adapter);
+}
+}
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+42
+Dept.of Computer Science And Applications, SJCET, Palai
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:id="@+id/textView2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView
+android:id="@+id/textView"
+android:layout_width="162dp"
+android:layout_height="47dp"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:text="Account"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+tools:layout_editor_absoluteY="64dp" />
+<ListView
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+43
+Dept.of Computer Science And Applications, SJCET, Palai
+android:id="@+id/lv"
+android:layout_width="368dp"
+android:layout_height="321dp"
+tools:layout_editor_absoluteX="8dp"
+tools:layout_editor_absoluteY="131dp" />
+</android.support.constraint.ConstraintLayolistut>
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+44
+Dept.of Computer Science And Applications, SJCET, Palai
+12.List View using Toast
+PROGRAM
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:id="@+id/textView2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<TextView
+android:id="@+id/tv"
+android:layout_width="162dp"
+android:layout_height="47dp"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:text="Account"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+tools:layout_editor_absoluteY="64dp" />
+<ListView
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+45
+Dept.of Computer Science And Applications, SJCET, Palai
+android:id="@+id/lv"
+android:layout_width="368dp"
+android:layout_height="321dp"
+tools:layout_editor_absoluteX="8dp"
+tools:layout_editor_absoluteY="131dp" />
+</android.support.constraint.ConstraintLayout>
+Main_Activity.java
+package com.example.sjcet.tostlistview;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity implements
+AdapterView.OnItemClickListener {
+TextView tv;
+ListView lv;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+tv=(TextView)findViewById(R.id.tv);
+String msg=getIntent().getStringExtra("mykey");// receiving the data
+tv.setText("welcome"+msg);
+lv=(ListView)findViewById(R.id.lv);// display(welcom changing to admin)
+// listvivew operation
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+46
+Dept.of Computer Science And Applications, SJCET, Palai
+String[] courses={"MCA","MBA","BBA","BCA"};
+ArrayAdapter adapter = new
+ArrayAdapter(this,android.R.layout.simple_list_item_1,courses);
+lv.setAdapter(adapter);
+// attach listener
+lv.setOnItemClickListener(this);//implement the method by alt+enter
+}
+@Override
+public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+String itemname=lv.getItemAtPosition(i).toString();
+Toast.makeText(this,itemname,Toast.LENGTH_SHORT).show();
+}
+}
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+47
+Dept.of Computer Science And Applications, SJCET, Palai
+13.Grid view
+PROGRAM
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<GridView
+android:id="@+id/gv"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:columnWidth="100dp"
+android:minHeight="100dp"
+android:numColumns="auto_fit"
+android:stretchMode="columnWidth"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
+Main_Activity.java
+package com.example.sjcet.myapplication;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+48
+Dept.of Computer Science And Applications, SJCET, Palai
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity implements
+AdapterView.OnItemClickListener {
+GridView gridView;
+static final String[] gridviewvalue={
+"facebook","Instagram","YouTube",
+"facebook","Instagram","YouTube",
+"facebook","Instagram","YouTube"
+};
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+gridView=findViewById(R.id.gv);
+ArrayAdapter adapter = new
+ArrayAdapter(this,android.R.layout.simple_list_item_1,gridviewvalue);
+gridView.setAdapter(adapter);
+gridView.setOnItemClickListener(this);
+}
+public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+{
+String itemname=gridView.getItemAtPosition(i).toString();
+Toast.makeText(this,itemname,Toast.LENGTH_SHORT).show();
+}
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+49
+Dept.of Computer Science And Applications, SJCET, Palai
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+50
+Dept.of Computer Science And Applications, SJCET, Palai
+14.Option menu
+PROGRAM
+Activity_Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello World!"
+android:id="@+id/tv"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
+Main_Activity.java
+package com.example.sjcet.contextmenu;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+51
+Dept.of Computer Science And Applications, SJCET, Palai
+public class MainActivity extends AppCompatActivity {
+TextView tv;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+tv=(TextView)findViewById(R.id.tv);
+String msg=getIntent().getStringExtra("mykey");// receiving the data
+tv.setText(msg); // display(welcom changing to admin)
+}
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+getMenuInflater().inflate(R.menu.main_menu,menu); //connecting menu
+return true; // changing to true
+}
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+switch (item.getItemId()) {
+case R.id.emergency: // full colon
+Toast.makeText(this," Emergency clicked",Toast.LENGTH_SHORT).show();
+break;
+case R.id.profile:
+Toast.makeText(this," Profile clicked",Toast.LENGTH_SHORT).show();
+break;
+case R.id.aboutus:
+Toast.makeText(this," About us clicked",Toast.LENGTH_SHORT).show();
+break;
+case R.id.signout:
+Toast.makeText(this," Signout clicked",Toast.LENGTH_SHORT).show();
+break;
+}
+return true;// changing to true
+}
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+52
+Dept.of Computer Science And Applications, SJCET, Palai
+Main_Menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+android:id="@+id/emergency"
+android:title="Emergency clicked"/>
+<item
+android:id="@+id/profile"
+android:title="Profile clicked"/>
+<item
+android:id="@+id/aboutus"
+android:title="About us clicked"/>
+<item
+android:id="@+id/signout"
+android:title="Signout clicked"/>
+</menu>
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+53
+Dept.of Computer Science And Applications, SJCET, Palai
+15.Context menu
+PROGRAM
+Activity_Main.Xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TextView
+android:id="@+id/text_view"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Click Here"
+android:textSize="30dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
+Main_Actiity.Java
+package com.example.sjcet.contextmenu;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+@Override
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+54
+Dept.of Computer Science And Applications, SJCET, Palai
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+TextView textView=findViewById(R.id.text_view);
+registerForContextMenu(textView);
+}
+@Override
+public void onCreateContextMenu(ContextMenu menu, View v,
+ContextMenu.ContextMenuInfo menuInfo) {
+super.onCreateContextMenu(menu, v, menuInfo);
+ getMenuInflater().inflate(R.menu.main_menu,menu);
+}
+@Override
+public boolean onContextItemSelected(MenuItem item) {
+switch (item.getItemId()){
+case R.id.Emergency:
+Toast.makeText(this,"Emergency Clicked",Toast.LENGTH_SHORT).show();
+break;
+case R.id.profile:
+Toast.makeText(this,"Profile Clicked",Toast.LENGTH_SHORT).show();
+break;
+case R.id.aboutus:
+Toast.makeText(this,"About Us Clicked",Toast.LENGTH_SHORT).show();
+break;
+case R.id.signout:
+Toast.makeText(this,"Signout Clicked",Toast.LENGTH_SHORT).show();
+break;
+default:
+}
+return super.onContextItemSelected(item);
+}
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+55
+Dept.of Computer Science And Applications, SJCET, Palai
+Main_Menu.Xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+android:id="@+id/Emergency"
+android:title="Emergency"
+/>
+<item android:id="@+id/profile"
+android:title="Profile"
+/>
+<item android:id="@+id/aboutus"
+android:title="About Us"
+/>
+<item android:id="@+id/signout"
+android:title="SignOut"
+/>
+</menu>
+OUTPUT
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+56
+Dept.of Computer Science And Applications, SJCET, Palai
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+57
+Dept.of Computer Science And Applications, SJCET, Palai
+16. Develop an application as a micro project which users SQL database
+Activity Main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<EditText
+android:id="@+id/ed1"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="8dp"
+android:ems="10"
+android:hint="name"
+android:inputType="textPersonName"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+<EditText
+android:id="@+id/ed2"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="36dp"
+android:ems="10"
+android:hint="Surname"
+android:inputType="textPersonName"
+app:layout_constraintStart_toStartOf="parent"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+58
+Dept.of Computer Science And Applications, SJCET, Palai
+app:layout_constraintTop_toBottomOf="@+id/ed1" />
+<EditText
+android:id="@+id/ed3"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="28dp"
+android:ems="10"
+android:hint="marks"
+android:inputType="textPersonName"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed2" />
+<Button
+android:id="@+id/button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="19dp"
+android:onClick="SaveDat"
+android:text="Insert"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed3"
+tools:ignore="OnClick" />
+<Button
+android:id="@+id/button2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="96dp"
+android:layout_marginLeft="96dp"
+android:layout_marginTop="19dp"
+android:onClick="read"
+android:text="Read"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed3"
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+59
+Dept.of Computer Science And Applications, SJCET, Palai
+tools:ignore="OnClick" />
+<TextView
+android:id="@+id/textView"
+android:layout_width="match_parent"
+android:layout_height="207dp"
+android:layout_marginTop="20dp"
+android:hint="data"
+app:layout_constraintTop_toBottomOf="@+id/button" />
+<Button
+android:id="@+id/button3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="192dp"
+android:layout_marginLeft="192dp"
+android:layout_marginTop="19dp"
+android:onClick="update"
+android:text="update"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed3"
+tools:ignore="OnClick" />
+<Button
+android:id="@+id/button4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="288dp"
+android:layout_marginLeft="288dp"
+android:layout_marginTop="19dp"
+android:onClick="delete"
+android:text="delete"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/ed3"
+tools:ignore="OnClick" />
+</android.support.constraint.ConstraintLayout>
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+60
+Dept.of Computer Science And Applications, SJCET, Palai
+Main_Menu.Xml
+package com.example.sjcet.databasepgm;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+EditText Name,Mark,Surname;
+TextView DataV;
+MyDatabase database = new MyDatabase(this) ;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+Name = findViewById(R.id.ed1);
+Surname = findViewById(R.id.ed2);
+Mark = findViewById(R.id.ed3);
+DataV = findViewById(R.id.textView);
+}
+public void SaveDat(View view) {
+String UserVal = Name.getText().toString();
+String SurnameVal = Surname.getText().toString();
+Integer PassVal = Integer.parseInt(Mark.getText().toString());
+Boolean result = database.insertdata(UserVal, PassVal,SurnameVal);
+if (result == true) {
+Toast.makeText(getApplicationContext(), "Data inserted Sucessfully",
+Toast.LENGTH_SHORT).show();
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+61
+Dept.of Computer Science And Applications, SJCET, Palai
+} else {
+Toast.makeText(getApplicationContext(), "Data inserted failed",
+Toast.LENGTH_SHORT).show();
+}
+}
+public void read(View view) {
+Cursor res = database.getAllData();
+StringBuffer stringBuffer = new StringBuffer();
+if (res != null && res.getCount() > 0) {
+while (res.moveToNext()) {
+stringBuffer.append("Id: " + res.getString(0) + "\n");
+stringBuffer.append("Name: " + res.getString(1) + "\n");
+stringBuffer.append("Surname: " + res.getString(2) + "\n");
+stringBuffer.append("marks: " + res.getString(3) + "\n");
+}
+DataV .setText(stringBuffer.toString());
+} else {
+Toast.makeText(getApplicationContext(), "Data Retrieved Successfully",
+Toast.LENGTH_SHORT).show();
+}
+Toast.makeText(getApplicationContext(), "Data Retrieved Successfully",
+Toast.LENGTH_SHORT).show();
+}
+public void update(View view) {
+String UserVal = Name.getText().toString();
+String SurnameVal = Surname.getText().toString();
+Integer PassVal = Integer.parseInt(Mark.getText().toString());
+Boolean result = database.updateData(UserVal, PassVal, SurnameVal);
+if (result==true){
+Toast.makeText(getApplicationContext(), "Data updated Successfully",
+Toast.LENGTH_SHORT).show();
+}
+else {
+Toast.makeText(getApplicationContext(), "No Rows Affected",
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+62
+Dept.of Computer Science And Applications, SJCET, Palai
+Toast.LENGTH_SHORT).show();
+}
+}
+public void delete(View view) {
+String UserVal = Name.getText().toString();
+int result=database.deletedata(UserVal);
+Toast.makeText(getApplicationContext(), "Rows Affected",
+Toast.LENGTH_SHORT).show();
+}
+}
+MyDatabase.Xml
+package com.example.sjcet.databasepgm;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
+public class MyDatabase extends SQLiteOpenHelper {
+public MyDatabase(Context context) {
+super(context, "Login.db", null, 1);
+}
+@Override
+public void onCreate(SQLiteDatabase db) {
+db.execSQL("Create table USERS(ID INTEGER PRIMARY KEY
+AUTOINCREMENT,NAME text,SURNAME text,MARKS INTEGER)");
+}
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+db.execSQL("DROP TABLE IF EXISTS USERS");
+}
+public Cursor getAllData() {
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+63
+Dept.of Computer Science And Applications, SJCET, Palai
+SQLiteDatabase db=this.getWritableDatabase();
+Cursor res = db.rawQuery("Select * from USERS",null);
+return res;
+}
+public Boolean insertdata(String userVal, Integer passVal, String surnameVal) {
+SQLiteDatabase db = this.getWritableDatabase();
+ContentValues contentValues = new ContentValues();
+contentValues.put("NAME", userVal);
+contentValues.put("SURNAME", surnameVal);
+contentValues.put("MARKS", passVal);
+long result = db.insert("USERS", null, contentValues);
+db.close();
+if (result == -1) {
+return false;
+} else {
+return true;
+}
+}
+public int deletedata(String userVal) {
+SQLiteDatabase db=this.getWritableDatabase();
+int i =db.delete("USERS","NAME=?",new String[]{userVal});
+return i;
+}
+public Boolean updateData(String userVal, Integer passVal, String surnameVal) {
+SQLiteDatabase db=this.getWritableDatabase();
+ContentValues contentValues=new ContentValues();
+contentValues.put("NAME",userVal);
+contentValues.put("SURNAME",surnameVal);
+contentValues.put("MARKS",passVal);
+int result=db.update("USERS",contentValues,"NAME=?",new String[]{userVal});
+if (result>0) {
+return true;
+}
+MCA 2021-23 20MCA243 MOBILE APPLICATION DEVELOPMENT LAB
+64
+Dept.of Computer Science And Applications, SJCET, Palai
+else
+{
+return false;
+}
+}
